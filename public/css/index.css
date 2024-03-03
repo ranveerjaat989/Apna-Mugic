@@ -1,0 +1,243 @@
+*{
+   /* background-color: rgba(199, 208, 218, 0.071); */
+}
+
+/* Nav Bar */
+body{
+    background-image: url('https://res.cloudinary.com/dtzrk3nql/image/upload/v1709359314/__-1_1______mjebkw.gif');
+    background-size:cover;
+}
+.MainNav{
+    display: flex;
+    height:60px;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    padding: 1rem;
+    background-color:rgba(196, 133, 91, 0.642) ;
+}
+.MainNav a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.925);
+    padding: 0.2rem;
+    
+}
+.MainNav a:hover{
+    text-decoration: underline;
+    color:rgba(0, 0, 0, 0.823);
+    font-weight: bold;
+}
+.MainNav img{
+    border-radius: 50%;
+    width: 3rem;
+}
+.MainNav-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logoMain{
+    font-family: "Times New Roman", Times, serif;
+}
+/* Main Body */
+.mugicList{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    height: 90%;
+    
+    overflow: scroll;
+}
+.mugic-src{
+    display: none;
+}
+.singer-name{
+    display: none;
+}
+
+.mugicContainer{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    border-radius: 5rem;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    background-color: rgba(120, 179, 179, 0.673);
+    padding-left: 0.2rem;
+    padding-top: 0.4rem;
+    box-shadow: .8px .8px 10px rgba(127, 255, 212, 0.801);
+    padding-bottom: 0.4rem;
+}
+.mugicContainer-left{
+    display: flex;
+    align-items:flex-end;
+}
+.mugicContainer-right{
+    display: flex;
+    align-items:flex-end;
+    margin-right: 20px;
+}
+.mugicContainer img{
+    width: 47px;
+    margin-right: 1.3rem;
+    height: 47px;
+    border-radius: 50%;
+}
+.mugicContainer:hover{
+    cursor: pointer;
+}
+.allControls{
+   position: fixed;
+   width: 55%;
+   height: 100px;
+   bottom: 0px;  
+   margin: 1rem 1rem;
+   margin-left: 45%;
+   padding-top:1rem ;
+   background-color: rgba(247, 247, 147, 0.566);
+}
+.control-upperpart{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.allControls-left{
+    display: flex;
+    text-align: center;
+}
+
+.control-bottompart{
+    display: flex;
+    width: 60%;
+    margin-top: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 18%;
+   font-size: 1.343rem;
+}
+.control-rang{
+    width: 70%;   
+    display: flex;
+    align-items: center;
+}
+.control-rang input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    width: 90%;
+    color: antiquewhite;
+}
+.allControls i{
+margin-bottom:10px;
+display: flex;
+color: antiquewhite;
+}
+.Controls-icon{
+    color: antiquewhite;
+    display: flex;
+}
+.Controls-icon i{
+    margin-right: 10px;
+    color: antiquewhite;
+}
+.Controls-icon i:hover{
+    cursor: pointer;
+}
+
+/*Profile  */
+.profile{
+   width: 100%;
+    margin-left: 3rem ;
+    color: antiquewhite;
+}
+.bottom-profile{
+
+    width: 90%;
+    color: antiquewhite;
+}
+.uper-profile{
+    color: antiquewhite;
+    display: flex; 
+}
+.userInfo{
+    color: antiquewhite;
+    margin-left: 2rem;
+}
+.profilemugic{
+    color: antiquewhite;
+    justify-content: space-between;
+    align-items: center;
+    height: 57px;
+    padding-right: 1rem;
+}
+.mugicContainer-right form{
+    display: flex;
+    margin-top: 15px;
+    color: antiquewhite;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 3rem;
+}
+.mugicContainer-right a{
+    display: flex;
+    color: antiquewhite;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.mugicContainer{
+    display: flex;
+    color: antiquewhite; 
+    padding-right: 1.2rem;
+    align-items: center;
+}
+.mugicContainer-riri{
+    margin-right: 2rem;
+    color: antiquewhite;
+}
+
+/* Admin */
+.allaccess{
+    display: flex;
+    color: antiquewhite;
+}
+.allaccess li a{
+    text-decoration: none;
+    color: antiquewhite;
+    color: rgba(47, 45, 45, 0.852);
+}
+.allaccess li a:hover{
+    text-decoration: underline;
+    color: antiquewhite;
+    color: rgba(0, 0, 0, 0.688);
+    font-weight: 600;
+}
+/* SInger List */
+.singer-collection{
+    display: flex;
+    color: antiquewhite;
+    flex-wrap: wrap;
+    overflow: scroll;
+    
+}
+.newcard{
+   width: 160px !important;
+   height: 360px !important;
+   margin-top: 2rem;
+   margin-right: 2rem;
+   margin-left: 1rem;
+}
+.newcard img{
+    width: 160px !important;
+    height: 170px !important;
+}
+.nono{
+    height: 60px;
+   color: antiquewhite;
+}

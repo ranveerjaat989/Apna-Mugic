@@ -1,0 +1,25 @@
+<nav>
+    <div class="MainNav">
+        <div class="nav-left">
+        
+            <img src="https://res.cloudinary.com/dtzrk3nql/image/upload/v1709291268/vikash._sw045q.jpg" alt="Logo">
+            <a href="/mugic" style="color: aliceblue;">Apna Music</a>
+           
+        </div>
+        <div class="nav-user">
+            <%if(!currUser){%>
+  
+                <%}%>  <%if(currUser){%>
+                    <a href="/logout" style="color: aliceblue;">Logout</a>
+                <%}%>
+            
+                
+                <a href="/adminmugics" >Music</a>
+                <a href="/adminusers">Users</a>
+                <a href="/adminrquests">Request</a>
+                <a href="/profile">profile</a>
+        </div>
+    </div>
+  
+   
+</nav>

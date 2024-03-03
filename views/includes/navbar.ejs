@@ -1,0 +1,27 @@
+<nav>
+
+
+    <div class="MainNav">
+        <div class="nav-left"> 
+            <img src="https://res.cloudinary.com/dtzrk3nql/image/upload/v1709291268/vikash._sw045q.jpg" alt="Logo">
+            <a href="/mugic" class="logoMain"><b>ApnaMusic</b></a>
+            <a href="/mugic/new">new Form</a>
+            
+                <a href="/album">Artists</a>
+                <a href="/foler">My Folder</a>
+        </div>
+
+        <div class="nav-user">
+         
+            <%if(!currUser){%>
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Login</a>
+                <%}%>  <%if(currUser){%>
+                    <a href="/admin">As Admin</a>
+                    <a href="/logout">Logout</a>
+                <%}%>
+                <a href="/profile">profile</a>
+        </div>
+    </div>
+
+</nav>

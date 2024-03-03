@@ -1,0 +1,42 @@
+<% layout('/layouts/adminBoilerplate')%>
+<body>
+
+    <div class="mugicList">
+        <% for(request of requests){%>
+            <div class="mugicContainer">
+                <p><%=request.username%></p>
+                <P class="mugicName"><%=request.title%></P>
+                <img class="singer-img" src="<%=request.img.url%>" alt="mugic image">             
+                <span class="mugic-src"><%=request.mugic %></span>
+                <form method="post" action='/adminrequest/<%=request.id%>?_method=DELETE'>
+                    <button >Delete</button>
+                </form> 
+                <form method="post" action='/adminrequest/<%=request.id%>'>
+                    <button >Add</button>
+                </form>       
+            </div>     
+            <% }%>
+    </div>
+<%if(requests&&requests.length>0){%>
+    <div class="allControls">
+        <div class="control-upperpart">
+            <p class="show-current-time">00:00</p>
+            <div class="control-rang">
+                <input type="range" min="0"  max="6000" value="00" id="range-mugic">
+            </div>
+            <p class="show-duration-time">00:00</p>
+        </div>
+       <div class="control-bottompart">
+            <div class="Controls-icon">
+                <i class="backward fa-solid fa-backward-step"></i>                
+                <i class="play fa-solid fa-play"></i>       
+                <i class="forward fa-solid fa-forward-step"></i>  
+                <div>
+                        <input class="rating" type="range" min="1" max="5" name="rating">
+                </div>
+            </div>
+       </div>   
+    </div>
+<%}%>  
+</div>
+</body>

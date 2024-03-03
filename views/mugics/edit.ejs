@@ -1,0 +1,42 @@
+<% layout('/layouts/boilerplate')%>
+<style>
+    img{
+    width: 100px;
+}
+
+</style>
+<body>
+
+    <div class="row">
+        <div class="col-8 offset-2 mt-3 image" >
+            <h1><%=mugic.username%></h1>
+            <h1><%=mugic.title%></h1>
+            <form method="post" action="/mugic/<%=mugic.id%>?_method=PUT" enctype="multipart/form-data" novalidate class="needs-validation">
+                <h2 class="mt-3">Edit your Mugic </h2>
+                <div>
+                    <label class="form-lable" for="title">Title</label>
+                    <input type="text" name="mugic[title]" value="<%=mugic.title%>" id="title" class="form-control" required>
+                    <div class="valid-feedback">Looks Good Title!</div>
+                </div>
+                <div>
+                  Original Mugic Image<br>
+                  
+                </div>
+                <div class="img">
+                    <img src="<%=mugic.img.url%>"/>
+                  </div>
+                <div>
+                    <label class="form-lable" for="image">Uplode a new image</label>
+                    <input type="file" value="<%=mugic.img%>" id="image" name="mugic[img]" class="form-control" >
+                    <div class="invalid-feedback">required a valid link for image</div>
+                </div>
+              
+                <div>
+                    <button class="btn btn-dark add-btn mt-3" >Edit</button>
+                </div>
+                
+            </form>
+        </div>
+        
+    </div>
+</body>

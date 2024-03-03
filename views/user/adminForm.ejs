@@ -1,0 +1,22 @@
+<% layout('/layouts/boilerplate')%>
+
+<body>
+    <div class="row">
+       
+        <div class="col-5 offset-3" >
+            <h2 class="offset-2"style="margin-bottom:1rem; margin-top: 0.5rem; color: aliceblue;">Sign in as Admin</h2>
+            <form action="/admin"method='post' class="needs-validation">
+              
+
+                <div  class="mb-3">
+                    <label class="form-lable"style="color: aliceblue;" for="code">Enter Admin Super Code:</label>
+                    <input type="password" id="code" placeholder="Enter your code" name="code" class="form-control">
+                </div>
+
+              
+                <button class="btn btn-success">Admin</button>
+            </form>
+        </div>
+    </div>
+
+</body>

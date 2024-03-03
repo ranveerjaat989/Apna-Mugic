@@ -1,0 +1,16 @@
+<% layout('/layouts/adminBoilerplate')%>
+<body>
+    <% for(user of users){%>
+        <div>
+            <div class="card newcard" style="display: flex; width: 18rem;">
+                <img  src="<%=user.img.url%> " class="card-img-top" alt="mugic image">
+                <div class="card-body">
+                  <h5 class="card-title"><%=user.name%></h5>
+                  <p class="card-text"><%=user.username%></p>           
+            <form method="post" class="btn  newbtn " action='/adminuser/<%=user.id%>?_method=DELETE'>
+                <button >Delete</button>
+            </form>          
+                </div> 
+        <% }%>
+</div>
+</body>

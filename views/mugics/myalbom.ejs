@@ -1,0 +1,14 @@
+<% layout('/layouts/boilerplate')%>
+<div class="singer-collection">
+
+  <% for(user of users){%>
+    <div class="card newcard" style="width: 18rem;">
+        <img  src="<%=user.img.url%> " class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%=user.name%></h5>
+          <p class="card-text"><%=user.username%></p>
+          <a href="/singersong/<%=user.username%>" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+  <%}%>
+</div>

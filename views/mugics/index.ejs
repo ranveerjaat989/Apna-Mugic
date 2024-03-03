@@ -1,0 +1,47 @@
+<% layout('/layouts/boilerplate')%>
+<body>
+   
+    <div class="ddd">
+        
+        <div class="mugicList">          
+            <% for(mugic of mugics){%>
+                <div class="mugicContainer">
+                    <div class="mugicContainer-left">
+                        <img class="singer-img" src="<%=mugic.img.url%>" alt="mugic image"> 
+                    </div>
+                    <div class="mugicContainer-center">
+                        <p class="singer-name"><%=mugic.username%></p>
+                        <P class="mugicName"><%=mugic.title%></P>
+                    </div>
+                    <div class="mugicContainer-right">
+                        <span class="mugic-src"><%=mugic.mugic %></span>
+                      
+                        <i class="fa-regular play-song fa-circle-play"></i>      
+                    </div>            
+                </div>     
+                <% }%>
+        </div>  
+    </div>
+    <div class="allControls">
+        <div class="control-upperpart">
+            <div class="control-rang">
+                <input type="range" min="0"  max="6000" value="00" id="range-mugic">
+            </div>     
+        </div>
+       <div class="control-bottompart">
+            <div class="allControls-left">
+                <p class="show-current-time">00:00</p>
+            </div>
+            <div class="Controls-icon">
+                <i class="backward fa-solid fa-backward-step"></i>                
+                <i class="fa-regular play fa-circle-play"></i>    
+                <i class="forward fa-solid fa-forward-step"></i>  
+            </div>
+            <div class="allControls-right">
+                <p class="show-duration-time">00:00</p>
+            </div>
+       </div>
+    </div>
+</body>
+
+

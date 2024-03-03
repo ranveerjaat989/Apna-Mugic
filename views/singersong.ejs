@@ -1,0 +1,413 @@
+<% layout('/layouts/boilerplate')%>
+<style>
+
+/* Nav Bar */
+.MainNav{
+    display: flex;
+    height:60px;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    padding: 1rem;
+    background-color:rgba(196, 133, 91, 0.642) ;
+}
+.MainNav a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.925);
+    padding: 0.2rem;
+    
+}
+.MainNav a:hover{
+    text-decoration: underline;
+    color:rgba(0, 0, 0, 0.823);
+    font-weight: bold;
+}
+.MainNav img{
+    border-radius: 50%;
+    width: 3rem;
+}
+.MainNav-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logoMain{
+    font-family: "Times New Roman", Times, serif;
+}
+/* Main Body */
+.mugicList{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    height: 80%;
+    overflow: scroll;
+}
+.mugic-src{
+    display: none;
+}
+.singer-name{
+    display: none;
+}
+
+.mugicContainer{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ /* background-color: rgba(230, 254, 254, 0.619); */
+    width: 40%;
+    border-radius: 5rem;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    background-color: rgba(120, 179, 179, 0.555);
+    padding-left: 0.2rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+.mugicContainer-left{
+    display: flex;
+    align-items:flex-end;
+}
+.mugicContainer-right{
+    display: flex;
+    align-items:flex-end;
+    margin-right: 20px;
+}
+.mugicContainer img{
+    width: 47px;
+    margin-right: 1.3rem;
+    height: 47px;
+    border-radius: 50%;
+}
+.mugicContainer:hover{
+    cursor: pointer;
+}
+
+
+.allControls{
+   position: fixed;
+   width: 100%;
+   height: 100px;
+   bottom: 0px;
+   margin: 1rem 1rem;
+ /* margin-top: 1rem; */
+ padding-top:1rem ;
+  background-color: beige;
+}
+.control-upperpart{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.allControls-left{
+    display: flex;
+    text-align: center;
+}
+
+.control-bottompart{
+    display: flex;
+    width: 60%;
+    margin-top: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 18%;
+   font-size: 1.343rem;
+}
+
+.control-rang{
+    width: 70%;
+    
+    display: flex;
+    align-items: center;
+}
+
+.control-rang input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    width: 90%;
+}
+.allControls i{
+margin-bottom:10px;
+display: flex;
+}
+
+.Controls-icon{
+
+    display: flex;
+}
+.Controls-icon i{
+    margin-right: 10px;
+}
+.Controls-icon i:hover{
+    cursor: pointer;
+}
+
+
+
+/*Profile  */
+.profile{
+   width: 100%;
+    margin-left: 3rem ;
+}
+.bottom-profile{
+
+    width: 100%;
+}
+.uper-profile{
+    display: flex;
+   
+}
+.userInfo{
+    margin-left: 2rem;
+}
+.profilemugic{
+    justify-content: space-between;
+    align-items: center;
+    height: 57px;
+    padding-right: 1rem;
+}
+.mugicContainer-right form{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 3rem;
+}
+.mugicContainer-right a{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.mugicContainer{
+    display: flex;
+    /* padding-top: 1rem; */
+    padding-right: 1.2rem;
+    align-items: center;
+}
+.mugicContainer-riri{
+    margin-right: 2rem;
+}
+
+/* Admin */
+.allaccess{
+    display: flex;
+}
+.allaccess li a{
+    text-decoration: none;
+    color: rgba(47, 45, 45, 0.852);
+}
+.allaccess li a:hover{
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.688);
+    font-weight: 600;
+}
+/* SInger List */
+.singer-collection{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    height: 87%;
+}
+
+</style>
+<body>
+    <div class="ddd">
+        
+        <div class="mugicList">          
+            <% for(mugic of mugics){%>
+                <div class="mugicContainer">
+                    <div class="mugicContainer-left">
+                        <img class="singer-img" src="<%=mugic.img.url%>" alt="mugic image"> 
+                    </div>
+                    <div class="mugicContainer-center">
+                        <p class="singer-name"><%=mugic.username%></p>
+                        <P class="mugicName"><%=mugic.title%></P>
+                    </div>
+                    <div class="mugicContainer-right">
+                        <span class="mugic-src"><%=mugic.mugic %></span>
+                      
+                        <i class="fa-regular play-song fa-circle-play"></i>      
+                    </div>            
+                </div>     
+                <% }%>
+        </div>  
+    </div>
+    <div class="allControls">
+        <div class="control-upperpart">
+            <div class="control-rang">
+                <input type="range" min="0"  max="6000" value="00" id="range-mugic">
+            </div>     
+        </div>
+       <div class="control-bottompart">
+            <div class="allControls-left">
+                <p class="show-current-time">00:00</p>
+            </div>
+            <div class="Controls-icon">
+                <i class="backward fa-solid fa-backward-step"></i>                
+                <i class="fa-regular play fa-circle-play"></i>    
+                <i class="forward fa-solid fa-forward-step"></i>  
+            </div>
+            <div class="allControls-right">
+                <p class="show-duration-time">00:00</p>
+            </div>
+       </div>
+    </div>
+   <script >
+
+let  newSong=new Audio();
+
+let range=document.querySelector('#range-mugic');
+let ShowCurrentTime=document.querySelector('.show-current-time') ;
+let ShowDurationTime=document.querySelector('.show-duration-time');
+playButton=document.querySelector('.play');
+backwardButton=document.querySelector('.backward');
+forwardButton=document.querySelector('.forward');
+let playb=document.querySelector('.play-song')
+let playIcon=document.querySelector('.play')
+let play=false;
+
+//Select Play Song...........
+let mugics=document.querySelectorAll('.mugicContainer')
+    Array.from(mugics).forEach((e,index)=>{
+      e.addEventListener('click',()=>{
+         song=document.querySelectorAll('.mugic-src')[index].innerText;
+         playb.classList.remove('fa-circle-pause');
+         playb.classList.add('fa-circle-play');
+         playb=document.querySelectorAll('.play-song')[index]
+         newSong.pause();
+
+         playb.classList.remove('fa-circle-play');
+         playb.classList.add('fa-circle-pause');
+      
+         newSong.src=song;       
+         audioPlay(newSong);
+         if(play){
+          playIcon.classList.remove('fa-circle-play');
+          playIcon.classList.add('fa-circle-pause');
+        }
+        else{
+        playIcon.classList.remove('fa-circle-pause');
+              playIcon.classList.add('fa-circle-play');
+        }
+      })
+  })
+
+  
+//Control Buttons
+playButton.addEventListener('click',()=>{
+    if(play){
+      newSong.pause();
+     
+      play=false;
+    }
+    else{
+      audioPlay(newSong)
+      
+    }
+    if(play){
+      playIcon.classList.remove('fa-circle-play');
+      playIcon.classList.add('fa-circle-pause');
+    }
+    else{
+    playIcon.classList.remove('fa-circle-pause');
+    playIcon.classList.add('fa-circle-play');
+    }
+})
+
+backwardButton.addEventListener('click',()=>{
+  newSong.currentTime=newSong.currentTime-10;
+})
+forwardButton.addEventListener('click',()=>{
+  newSong.currentTime=newSong.currentTime+10;
+})
+
+function audioPlay(newSong){
+  newSong.play();
+  play=true;
+}
+//update Range value
+range.addEventListener('change',async()=>{
+  newSong.currentTime= await (range.value*newSong.duration)/6000;
+})
+
+//Set Time Update of Current play Song
+newSong.addEventListener('timeupdate',()=>{
+  let currentTime=Math.floor(newSong.currentTime);
+  let DurationTime=Math.floor(newSong.duration);
+
+  //Set Range Value
+
+  range.value=(newSong.currentTime/newSong.duration)*6000;
+
+   
+  //Current Time Set..............
+  if( currentTime<60){
+    if(currentTime<10){
+      ShowCurrentTime.innerText=`00:0${Math.floor(newSong.currentTime)}`;
+    }
+    else{
+      ShowCurrentTime.innerText=`00:${Math.floor(newSong.currentTime)}`;
+    }
+  }
+  else{
+       minit=currentTime/60;
+       second=currentTime%60;
+       if(minit<10){
+        if(second<10){
+          ShowCurrentTime.innerText=`0${Math.floor(minit)}:0${Math.floor(second)}`;
+        }
+        else{
+          ShowCurrentTime.innerText=`0${Math.floor(minit)}:${Math.floor(second)}`;
+        }
+       }
+       else{
+        if(second<10){
+          ShowCurrentTime.innerText=`${Math.floor(minit)}:0${Math.floor(second)}`;
+        }
+        else{
+          ShowCurrentTime.innerText=`${Math.floor(minit)}:${Math.floor(second)}`;
+        }
+       }     
+  }
+
+  //Duration Time Set............
+   if(DurationTime<60){
+      if(DurationTime<10){
+        ShowCurrentTime.innerText=`00:0${Math.floor(newSong.currentTime)}`;
+      }
+      else{
+        ShowCurrentTime.innerText=`00:${Math.floor(newSong.currentTime)}`;
+      }
+    }
+    else{
+       minit=DurationTime/60;
+       second=DurationTime%60;
+       if(minit<10){
+        if(second<10){
+          ShowDurationTime.innerText=`0${Math.floor(minit)}:0${Math.floor(second)}`;
+        }
+        else{
+          ShowDurationTime.innerText=`0${Math.floor(minit)}:${Math.floor(second)}`;
+        }
+       }
+       else{
+        if(second<10){
+          ShowDurationTime.innerText=`${Math.floor(minit)}:0${Math.floor(second)}`;
+        }
+        else{
+          ShowDurationTime.innerText=`${Math.floor(minit)}:${Math.floor(second)}`;
+        }
+       }     
+   }
+})
+
+
+   </script>
+   
+</body>

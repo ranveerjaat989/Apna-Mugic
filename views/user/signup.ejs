@@ -1,0 +1,37 @@
+<% layout('/layouts/boilerplate')%>
+
+<body>
+    <div class="row">
+        <div class="col-5 offset-3" >
+            <h2 class="offset-2"style="margin-bottom:1rem; margin-top: 0.5rem;">SignUp on Wanderlust</h2>
+            <form action="/signup"method='post' class="needs-validation" novalidate enctype="multipart/form-data">
+                <div  class="mb-3">
+                    <label class="form-lable" for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" name="name" class="form-control">
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+                <div  class="mb-3">
+                    <label class="form-lable" for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Enter your username" name="username" class="form-control">
+                    <div class="valid-feedback">Looks Good!</div>
+                </div>
+
+                <div  class="mb-3">
+                    <label class="form-lable" for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your Email" name="email" class="form-control">
+                </div>
+
+                <div  class="mb-3">
+                    <label class="form-lable" for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your Password" name="password" class="form-control " required>
+                </div>
+                <div  class="mb-3">
+                    <label class="form-lable" for="mugic-link"> Mugic :</label>
+                    <input type="file" name="img" id="mugic-link" placeholder="Add mugic link" class="form-control" required>
+                    <div class="invalid-feedback">required a short Description</div>
+                    <div class="valid-feedback">Looks Good Title!</div>
+                </div>
+                <button class="btn btn-success">SignUp</button>
+            </form>
+        </div>
+    </div>
